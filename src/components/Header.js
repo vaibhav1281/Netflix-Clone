@@ -25,7 +25,7 @@ const Header = () => {
                         <option>हिंदी</option>
                     </select>
                 </div>
-                <div className='bg-red-700 py-1 px-2 rounded-md'>
+                <div className='bg-netflix-red py-1 px-2 rounded-md'>
                     <button>
                         <Link to={'/login'}>Sign In</Link>
                     </button>
