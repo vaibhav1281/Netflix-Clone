@@ -1,6 +1,8 @@
 import React from 'react'
-import { IN_BACKGROUND_CDN, LOGO_CDN } from '../utils/constant'
+// import { IN_BACKGROUND_CDN, LOGO_CDN } from '../utils/constant'
 import { Link } from 'react-router-dom'
+import Netflix_Logo_PMS from '../assets/Netflix_Logo_PMS.png'
+import IN_BACKGROUND_CDN from '../assets/IN_BACKGROUND_CDN.jpg'
 
 const SighUpIn = () => {
   return (
@@ -9,7 +11,7 @@ const SighUpIn = () => {
       <div className='absolute bg-gradient-to-b from-black w-full z-10'>
         <img
             className='w-52'
-            src={LOGO_CDN}
+            src={Netflix_Logo_PMS}
             alt='Logo'
         />
       </div>
