@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from './Header'
+import Header from './ui/headers/Header'
 import { Link } from 'react-router-dom'
 import { IN_BACKGROUND_CDN } from '../utils/constant'
 import { ChevronRightIcon } from "@heroicons/react/24/solid"
@@ -47,8 +47,59 @@ export const LandingPage = () => {
                     </form>
                 </div>
             </section>
-            
-            <section className='w-full h-[640px] bg-black'></section>
+
+            <section className='w-full h-[640px] bg-black flex justify-center items-center'>
+                <div className='w-9/12 flex justify-between items-center'>
+                    <div className='text-white flex flex-col justify-center w-[50%]'>
+                        <h1 className='text-4xl font-black'>Enjoy on your TV</h1>
+                        <h3 className='text-2xl'>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</h3>
+                    </div>
+                    <div className='w-[50%] relative'>
+                        <video className='w-[80%] mt-4 flex justify-center '>
+                            <source src={video1}/>
+                        </video>
+                        <div className='absolute top-0 bottom-0'>
+                            <img alt='' src={TV}/>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className='w-full h-[640px] bg-black flex justify-center items-center'>
+                <div className='w-9/12 flex justify-between items-center'>
+                    <div className='text-white flex flex-col justify-center'>
+                        <h1 className='text-4xl font-black'>Enjoy on your TV</h1>
+                        <h3 className='text-2xl'>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</h3>
+                    </div>
+                    <div className='w-[640px] h-[480px] bg-cover bg-center bg-no-repeat' style={{ backgroundImage: `url(${TV})` }}>
+                        <video className='flex justify-center items-center'>
+                            <source src={video1} className='flex justify-center items-center'/>
+                        </video>
+                        {/* <div className='absolute top-0 bottom-0'>
+                            <img alt='' src={TV}/>
+                        </div> */}
+                    </div>
+                </div>
+            </section>
+
+            <section className='w-full h-[640px] bg-black flex justify-center items-center'>
+                <div className='w-9/12 grid grid-cols-2'>
+                    <div className='text-white'>
+                        <h1 className='text-4xl font-black'>Enjoy on your TV</h1>
+                        <h3 className='text-2xl'>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</h3>
+                    </div>
+                    <div className='relative w-[640px] h-[480px]'>
+                        <img alt='' src={TV} className='absolute h-full object-fill'/>
+                        <div className=' '>
+                            <video>
+                                <source src={video1} />
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
         </div>
     </div>
   )
