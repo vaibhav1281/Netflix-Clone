@@ -10,7 +10,7 @@ const SighUpIn = () => {
       <div className="absolute inset-0 bg-gradient-to-top max-sm:bg-black"></div>
       <div className='absolute bg-gradient-to-b from-black w-full z-10'>
         <img
-            className='w-52'
+            className='w-52 max-sm:w-[75px] max-sm:m-4'
             src={Netflix_Logo_PMS}
             alt='Logo'
         />
@@ -22,7 +22,7 @@ const SighUpIn = () => {
             className='w-full h-screen object-center object-cover'
           />
       </div>
-      <div className='absolute top-0 bottom-0 flex justify-center items-center w-full overflow-hidden'>
+      <div className='absolute top-0 bottom-0 flex justify-center items-center w-full overflow-hidden z-10'>
         <form className='bg-black bg-opacity-80 p-16 max-sm:p-6 rounded '>
           <div className='flex flex-col space-y-6 w-[314px] max-sm:w-full mb-8'>
             <label className='text-white text-4xl font-semibold'>Sign In</label>
