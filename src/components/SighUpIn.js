@@ -36,12 +36,12 @@ const SighUpIn = () => {
                 isSignInForm ? "Sign In" : "Sign Up"
               }
             </label>
-            <div className='flex flex-col space-y-4'>
+            <div className='flex flex-col space-y-4 text-white'>
             
               {!isSignInForm && 
-                <input className='p-4 rounded bg-[#666] outline-none' type='email' placeholder='Full Name'/>
+                <input className='p-4 rounded bg-[#666] outline-none text-white' type='text' placeholder='Full Name' required/>
               }
-              <input className='p-4 rounded bg-[#666] outline-none' type='email' placeholder='Email or Phone number'/>
+              <input className='p-4 rounded bg-[#666] outline-none' type='email' placeholder='Email or Phone number' required/>
               <input className='p-4 rounded bg-[#666] outline-none'  type='password' placeholder='Password'/>
             </div>
             <button className='p-4 rounded bg-netflix-red text-white'>
@@ -92,4 +92,4 @@ const SighUpIn = () => {
 
 export default SighUpIn
 
-//Explain my sign in- sign up logic?
+//formik
