@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import Netflix_Logo_PMS from '../assets/Netflix_Logo_PMS.png'
 import IN_BACKGROUND_CDN from '../assets/IN_BACKGROUND_CDN.jpg'
 import { checkValidData } from '../utils/validate'
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../utils/firebase'
 
 const SighUpIn = () => {
 
@@ -16,8 +18,42 @@ const SighUpIn = () => {
     // Validate form data
     const message = checkValidData(email.current.value, password.current.value);
     setErrorMessage(message)
+    if (message) return;
 
-    // Sign
+    if(!isSignInForm){
+
+      createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+      .then((userCredential) => {
+        // Signed up 
+        const user = userCredential.user;
+        // console.log(user)
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // console.log("Error: ", errorCode, errorMessage)
+        // ..
+      });
+
+    }
+    else{
+
+      signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        console.log(user)
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // console.log("Error: ", errorCode, errorMessage)
+        setErrorMessage(errorMessage)
+      });
+
+    }
   } 
 
   const toggelSignInUpForm = () =>{
