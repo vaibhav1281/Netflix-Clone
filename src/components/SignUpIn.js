@@ -1,16 +1,21 @@
 import React, { useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Netflix_Logo_PMS from '../assets/Netflix_Logo_PMS.png'
 import IN_BACKGROUND_CDN from '../assets/IN_BACKGROUND_CDN.jpg'
 import { checkValidData } from '../utils/validate'
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from '../utils/firebase'
+import { useDispatch } from 'react-redux'
+import { addUser } from '../redux/userSlice'
 
 const SighUpIn = () => {
 
   const[isSignInForm, setIsSignInForm] = useState(true)
   const[errorMessage, setErrorMessage] = useState(null)
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
+  const name = useRef(null)
   const email = useRef(null);
   const password = useRef(null)
 
@@ -26,8 +31,24 @@ const SighUpIn = () => {
       .then((userCredential) => {
         // Signed up 
         const user = userCredential.user;
-        // console.log(user)
-        // ...
+        updateProfile(user, {
+          displayName: name.current.value,
+        }).then(() => {
+          // Profile updated!
+          
+          const {uid, email, displayName} = auth.currentUser;
+          dispatch(addUser({
+            uid: uid,
+            email: email,
+            displayName: displayName,
+            // photoUrl: photoURL
+          }));
+
+          navigate("/browse");
+        }).catch((error) => {
+          // An error occurred
+          setErrorMessage(error.message)
+        });
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -43,7 +64,7 @@ const SighUpIn = () => {
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
-        console.log(user)
+        navigate("/browse");
         // ...
       })
       .catch((error) => {
@@ -90,6 +111,7 @@ const SighUpIn = () => {
 
               {!isSignInForm &&( 
                 <input 
+                  ref={name}
                   className='p-4 rounded bg-[#666] outline-none' 
                   type='text' 
                   placeholder='Full Name'
