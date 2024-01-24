@@ -1,13 +1,18 @@
 import React from 'react'
 import Header from './Header'
+import useNowPlayingMovies from '../hooks/useNowPlayingMovies'
+import MainContainer from './MainContainer';
+import SecondaryContainer from './SecondaryContainer';
 
 const Browse = () => {
+
+  useNowPlayingMovies();
+
   return (
-    <div className='w-full'>
+    <div className=''>
         <Header/>
-        <div className=''>
-            Movies
-        </div>
+        <MainContainer/>
+        <SecondaryContainer/>
     </div>
   )
 }

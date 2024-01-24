@@ -24,9 +24,7 @@ const SighUpIn = () => {
     const message = checkValidData(email.current.value, password.current.value);
     setErrorMessage(message)
     if (message) return;
-
     if(!isSignInForm){
-
       createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
       .then((userCredential) => {
         // Signed up 
@@ -35,7 +33,7 @@ const SighUpIn = () => {
           displayName: name.current.value,
         }).then(() => {
           // Profile updated!
-          
+
           const {uid, email, displayName} = auth.currentUser;
           dispatch(addUser({
             uid: uid,
@@ -56,10 +54,8 @@ const SighUpIn = () => {
         // console.log("Error: ", errorCode, errorMessage)
         // ..
       });
-
     }
     else{
-
       signInWithEmailAndPassword(auth, email.current.value, password.current.value)
       .then((userCredential) => {
         // Signed in 
@@ -73,14 +69,11 @@ const SighUpIn = () => {
         // console.log("Error: ", errorCode, errorMessage)
         setErrorMessage(errorMessage)
       });
-
     }
   } 
-
   const toggelSignInUpForm = () =>{
     setIsSignInForm(!isSignInForm)
   }
-
   return (
     <div className='w-full relative overflow-y-auto'>
       <div className="absolute inset-0 bg-gradient-to-top max-sm:bg-black"></div>
@@ -129,14 +122,12 @@ const SighUpIn = () => {
                 type='password' 
                 placeholder='Password'
               />
-
               <p className='text-netflix-red'>{errorMessage}</p>
             </div>
             
             <button className='p-4 rounded bg-netflix-red text-white' onClick={handleButtonClick}>
               {isSignInForm ? "Sign In" : "Sign Up"}
             </button>
-
             {isSignInForm && (
               <div className='flex justify-between items-center'>
                 <div>
@@ -146,7 +137,6 @@ const SighUpIn = () => {
                 <Link className='text-[#666]'>Need help?</Link>
               </div>
             )}
-
             <div className='space-y-2'>
               <h3 onClick={toggelSignInUpForm} className='text-[#737373] text-sm max-sm:text-base cursor-pointer'>
                 {isSignInForm ? 'New to Netflix?' : 'Restart your membership.'} 
@@ -154,15 +144,12 @@ const SighUpIn = () => {
                   {isSignInForm ? 'Sign up now.' : 'Sign in now.'}
                 </span>
               </h3>
-
               {isSignInForm &&(
                 <p className='text-[#8C8C8C] text-xs max-sm:text-base'>Sign in is protected by Google reCAPTCHA to ensure you’re not a bot. 
                   <span className='text-blue-600 text-xs max-sm:text-base'> {`<![CDATA[<b>Learn more.</b>]]>`}</span>
                 </p>
               )}
             </div>
-
-
           </div>
         </form>
       </div>
@@ -170,5 +157,4 @@ const SighUpIn = () => {
     </div>
   ) 
 }
-
 export default SighUpIn

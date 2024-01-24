@@ -1,6 +1,7 @@
 {
   "name": "netflix-gpt",
   "version": "0.1.0",
+  "author":"Vaibhav Saroj",
   "private": true,
   "dependencies": {
     "@heroicons/react": "^2.1.1",

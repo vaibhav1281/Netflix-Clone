@@ -1,21 +1,48 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Netflix_Logo_PMS from '../assets/Netflix_Logo_PMS.png'
-import { getAuth, signOut } from "firebase/auth";
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addUser, removeUser } from '../redux/userSlice';
+import { auth } from '../utils/firebase';
 
 
 const Header = () => {
 
     const navigate = useNavigate();
     const user = useSelector(store => store.user);
-    console.log(user)
+    const dispatch = useDispatch()
+
+    useEffect(() =>{
+
+        onAuthStateChanged(auth, (user) => {
+          if (user) {
+            // User is signed in, see docs for a list of available properties
+            // https://firebase.google.com/docs/reference/js/auth.user
+            const {uid, email, displayName, photoURL} = user;
+    
+            dispatch(addUser({
+              uid: uid,
+              email: email,
+              displayName: displayName,
+              // photoUrl: photoURL
+            }));
+
+            navigate("/browse")
+    
+          } else {
+            // User is signed out
+            dispatch(removeUser());
+            navigate("/")
+          }
+        });
+    
+      },[]);
 
     const handleSignOut = () => {
         const auth = getAuth();
         signOut(auth).then(() => {
             // Sign-out successful.
-            navigate("/")
 
         }).catch((error) => {
             // An error happened.
@@ -25,7 +52,7 @@ const Header = () => {
 
 
   return (
-    <div className='w-full h-24 z-20 bg-gradient-to-b from-black'>
+    <div className='w-full h-24 z-20 bg-gradient-to-b from-black absolute'>
         
         <div className='w-9/12 lg:w-9/12 max-sm:w-11/12 md:w-10/12 flex justify-between items-center mx-auto'>
             {/* logo */}
