@@ -51,8 +51,6 @@ const SighUpIn = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        // console.log("Error: ", errorCode, errorMessage)
-        // ..
       });
     }
     else{
@@ -66,7 +64,6 @@ const SighUpIn = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        // console.log("Error: ", errorCode, errorMessage)
         setErrorMessage(errorMessage)
       });
     }

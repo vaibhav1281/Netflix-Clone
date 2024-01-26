@@ -1,7 +1,6 @@
 import React from 'react'
 
 const VideoTitle = ({title, overview}) => {
-    // console.log(title, overview) 01:19:35
   return (
     <div className='pt-[20%] px-12 absolute text-white bg-gradient-to-r from-black w-full aspect-video'>
         <h1 className='lg:text-5xl md:text-3xl sm:text-xl font-bold mb-4'>{title}</h1>
