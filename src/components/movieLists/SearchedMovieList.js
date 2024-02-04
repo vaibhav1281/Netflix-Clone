@@ -2,7 +2,6 @@ import React from 'react'
 import SearchedMovieListCard from './SearchedMovieListCard';
 
 const SearchedMovieList = ({searchedMovieList}) => {
-    console.log(searchedMovieList)
   return (
     <div className='w-full h-screen overflow-scroll no-scrollbar space-y-4'>
         {
