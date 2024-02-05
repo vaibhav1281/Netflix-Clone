@@ -15,7 +15,7 @@ const SearchedMovieListCard = ({
 
   return (
     <div className='flex w-full  justify-center items-center mt-4'>
-        <div className="flex w-6/12 h-full space-x-4">
+        <div className="flex w-6/12 max-sm:w-10/12 h-full space-x-4">
             <img
              alt=''
              className="w-1/6 h-1/5 max-sm:w-2/6" 

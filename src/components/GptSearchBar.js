@@ -19,7 +19,7 @@ const GptSearchBar = () => {
     dispatch(showSearchedMovies(json.results))
   }
   useEffect(() =>{
-    handleGptSearchClick();
+    if(!searchedMovies) handleGptSearchClick();
   },[])
 
   return (
