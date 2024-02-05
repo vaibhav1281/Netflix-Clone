@@ -1,6 +1,3 @@
-# Demo Video
-
-https://github.com/vaibhav1281/Netflix-Clone/assets/93854530/5d3166a4-1101-4385-a395-a7fe07d70959
 
 ## Tech Stack
 
@@ -20,8 +17,11 @@ https://github.com/vaibhav1281/Netflix-Clone/assets/93854530/5d3166a4-1101-4385-
 
 ## Screenshots
 
-<img src="./public/images/homepage.png" width=30% /><img src="./public/images/search.png" width=30/>
+<img src="./public/images/homepage.png" width=30% /><img src="./public/images/searchPage.png" width=30%/>
 
 ![Home Page](./public/images/homepage.png "Home Page")
 ![Search Page](./public/images/searchPage.png "Search Page")
-<!-- ![Movie Detail Page](./public/images/movieDetail.png "Movie Detail Page") -->
+
+# Demo Video
+
+https://github.com/vaibhav1281/Netflix-Clone/assets/93854530/5d3166a4-1101-4385-a395-a7fe07d70959
