@@ -7,6 +7,7 @@ export const API_OPTIONS = {
 };
 
 export const IMAGE_CDN_URL = 'https://image.tmdb.org/t/p/w500';
+export const MOVIE_DETAIL_BG_IMG_URL = "https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces"
 
 export const SUPPORTED_LANGUAGR = [
   {

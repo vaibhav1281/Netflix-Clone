@@ -7,6 +7,9 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfi
 import { auth } from '../utils/firebase'
 import { useDispatch } from 'react-redux'
 import { addUser } from '../redux/userSlice'
+import linkedIn from '../assets/linkedIn.svg'
+import x from '../assets/x.svg'
+import gitHub from '../assets/gitHub.svg'
 
 const SighUpIn = () => {
 
@@ -141,11 +144,33 @@ const SighUpIn = () => {
                   {isSignInForm ? 'Sign up now.' : 'Sign in now.'}
                 </span>
               </h3>
-              {isSignInForm &&(
-                <p className='text-[#8C8C8C] text-xs max-sm:text-base'>Sign in is protected by Google reCAPTCHA to ensure you’re not a bot. 
-                  <span className='text-blue-600 text-xs max-sm:text-base'> {`<![CDATA[<b>Learn more.</b>]]>`}</span>
-                </p>
-              )}
+                <div className='text-[#8C8C8C] text-xs max-sm:text-base'>Cloned By <span className='font-bold'>©</span> 
+                  <span className='text-blue-600 text-xs max-sm:text-base font-semibold'> Vaibhav Saroj</span>
+                  <div className='flex mt-2 space-x-2'>
+                    <Link to={'https://www.linkedin.com/in/vaibhav-saroj-b456b0221/'}>
+                      <img
+                        className='w-6'
+                        src={linkedIn}
+                        alt="linkedIn logo"
+                      />
+                    </Link>
+                    <Link to={'https://twitter.com/Vaibhav_1281'}>
+                      <img
+                        className='w-6'
+                        src={x}
+                        alt="twitter logo"
+                      />
+                    </Link>
+                    <Link to={'https://github.com/vaibhav1281?tab=repositories'}>
+                      <img
+                        className='w-6'
+                        src={gitHub}
+                        alt="gitHub logo"
+                      />
+                    </Link>
+                  </div>
+                </div>
+              
             </div>
           </div>
         </form>

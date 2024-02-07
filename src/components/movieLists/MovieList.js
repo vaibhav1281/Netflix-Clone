@@ -1,5 +1,6 @@
 import React from 'react'
 import MovieCard from './MovieCard'
+import { Link } from 'react-router-dom'
 
 const MovieList = ({title, movies}) => {
   return (
@@ -12,9 +13,14 @@ const MovieList = ({title, movies}) => {
           { 
             movies && Array.isArray(movies) && 
             (
-              movies.map((movie) => <MovieCard
-                key={movie.id} 
-                posterPath={movie.poster_path}/> 
+              movies.map((movie) => (
+                <Link
+                  to={"/browse/movie/" + movie.id}
+                  key={movie.id}
+                >
+                  <MovieCard  posterPath={movie.poster_path}/>
+                </Link>
+              ) 
               )
             ) 
           }

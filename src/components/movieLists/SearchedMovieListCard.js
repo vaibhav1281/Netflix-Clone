@@ -9,6 +9,7 @@ const SearchedMovieListCard = ({
         releaseDate,
         genreId
     }) => {
+        console.log(genreId)
 
         // Truncate the overview for mobile view
   const truncatedOverview = overview.length > 100 ? overview.substring(0, 50) + "..." : overview;
