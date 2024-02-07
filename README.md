@@ -33,7 +33,7 @@ https://github.com/vaibhav1281/Netflix-Clone/assets/93854530/8166a876-d579-4278-
 
 ![Home Page](./public/images/homepage.png "Home Page")
 ![Search Page](./public/images/searchPage.png "Search Page")
-![Movie Detail Page](./public/images/movieDetail.png "Movie Detail Page")
+![Movie Detail Page](./public/images/movieDetails.png "Movie Detail Page")
 
 ![Mobile Home Page](./public/images/mobile_homepage.png "Movie Detail Page")
 ![Mobile Dashboard Page](./public/images/mobileDashBoard.png "Movie Detail Page")
