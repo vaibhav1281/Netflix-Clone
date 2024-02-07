@@ -25,10 +25,20 @@ https://github.com/vaibhav1281/Netflix-Clone/assets/93854530/8166a876-d579-4278-
 
 ## Screenshots
 
-<img src="./public/images/homepage.png" width=30% /><img src="./public/images/searchPage.png" width=30%/>
+<img src="./public/images/homepage.png" width=30% /><img src="./public/images/searchPage.png" width=30%/>  <img src="./public/images/movieDetails.png" width=30%/>
+<img src="./public/images/mobile_homepage.png" width=30%/>
+<img src="./public/images/mobileDashBoard.png" width=30%/>
+<img src="./public/images/mobile_searchPage.png" width=30%/>
+<img src="./public/images/mobile_movieDetail.png" width=30%/>
 
 ![Home Page](./public/images/homepage.png "Home Page")
 ![Search Page](./public/images/searchPage.png "Search Page")
+![Movie Detail Page](./public/images/movieDetail.png "Movie Detail Page")
+
+![Mobile Home Page](./public/images/mobile_homepage.png "Movie Detail Page")
+![Mobile Dashboard Page](./public/images/mobileDashBoard.png "Movie Detail Page")
+![Mobile Search Page](./public/images/mobile_searchPage.png "Movie Detail Page")
+![Mobile Movie Detail Page](./public/images/mobile_movieDetail.png "Movie Detail Page")
 
 
 
