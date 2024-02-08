@@ -18,7 +18,7 @@
 - View Details of a movie / TV Show including Ratings, Reviews, Casts etc.
 
 ## Installation Instructions:
-1. Clone this repository by running `git clone https://github.com/diegueus9/movieapp.git` in your terminal.
+1. Clone this repository by running `git clone https://github.com/vaibhav1281/Netflix-Clone.git` in your terminal.
 2. Navigate to the project directory by running `cd movieapp`.
 3. Run `npm install` or `yarn install` to install all necessary dependencies.
 4. Create a new file named `.env`, then copy the content of `.env.example` into it. Fill in the empty fields with your own values, especially the REACT_
